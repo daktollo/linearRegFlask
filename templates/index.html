@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Height to Weight Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter your height (in cm):</h1>
+        <form method="POST">
+            <input type="text" name="height" placeholder="Enter height" required>
+            <button type="submit">Predict Weight</button>
+        </form>
+        
+        {% if prediction %}
+            <h2>Predicted weight: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
