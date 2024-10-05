@@ -6,16 +6,11 @@ import joblib
 
 
 # Load the dataset
-data = pd.read_csv('Height-Weight_Dataset.csv')
+data = pd.read_csv('SOCR-HeightWeight.csv')
 
+X = data[['Height(Inches)']]
+y = data['Weight(Pounds)']
 
-
-# Use 'Boy (cm)' as the feature and 'Kilo (kg)' as the target
-X = data[['Boy (cm)']]
-y = data['Kilo (kg)']
-
-
-# Split the dataset into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 
